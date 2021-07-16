@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/mascara-telefone.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Minha Loja</title>
+</head>
+
+<body onload="gerar_numeros()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=2287135034942924&autoLogAppEvents=1"></script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 text-center pb-5 pt-5">
+                <h1>MINHA LOJA</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+                <h1 class="pb-2">DESCONTOS ESPECIAIS PARA VOCÊ!</h1>
+                <h2 class="text-white  pb-4">Escolha os tratamentos que deseja fazer que te daremos um desconto especial em nossos serviços!</h2>
+                <div class="text-center pb-4">
+                    <img class="img-fluid" style="max-height: 690px" src="img/img-modelo.png" />
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="cabecalho-formulario">
+                    <p class="text-white">Selecione o tratamento pela imagem, preencha o formulário e clique em “enviar”! Entraremos em contato o mais breve.</p>
+                </div>
+                <form class="formulario" id="form_cadastro" action="" method="post">
+                    <div class="row tratamentos text-center">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+
+                            <input type="checkbox" id="cbk_gordura" name="cbk_gordura" value="gordura localizada e emagrecimento" />
+                            <label class="bkg-img-ckb gordura text-center" for="cbk_gordura"></label>
+
+                            <p><strong>GORDURA LOCALIZADA<br>EMAGRECIMENTO</strong></p>
+
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <input type="checkbox" id="cbk_rugas" name="cbk_rugas" value="rugas e olheiras" />
+                            <label class="bkg-img-ckb rugas" for="cbk_rugas"></label>
+                            <p><strong>RUGAS E OLHEIRAS</strong></p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <input type="checkbox" id="cbk_celulite" name="cbk_celulite" value="celulite" />
+                            <label class="bkg-img-ckb celulite" for="cbk_celulite"></label>
+                            <p><strong>CELULITE</strong></p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <input type="checkbox" id="cbk_flacidez" name="cbk_flacidez" value="flacidez" />
+                            <label class="bkg-img-ckb flacidez" for="cbk_flacidez"></label>
+                            <p><strong>FLACIDEZ</strong></p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <input type="checkbox" id="cbk_vasinhos" name="cbk_vasinhos" value="vasinhos" />
+                            <label class="bkg-img-ckb vasinhos" for="cbk_vasinhos"></label>
+                            <p><strong>VASINHOS</strong></p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <input type="checkbox" id="cbk_estrias" name="cbk_estrias" value="estrias" />
+                            <label class="bkg-img-ckb estrias" for="cbk_estrias"></label>
+                            <p><strong>ESTRIAS</strong></p>
+                        </div>
+                    </div>
+                    <p class="text-white">Nome completo*:</p>
+                    <input type="text" name="nome" id="nome" class="form-control mb-4">
+                    <p class="text-white">E-mail*:</p>
+                    <input type="email" name="email" id="email" class="form-control mb-4">
+                    <p class="text-white">Telefone*:</p>
+                    <input type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX" id="telefone" class="form-control mb-4" onkeydown="javascript:fMasc(this, mTel)">
+                    <p class="text-white"><span id="numero01"></span> + <span id="numero02"></span> = ?</p>
+                    <input type="text" name="validacao" id="validacao" class="form-control mb-1">
+                    <span style="display: none;color: white" id="msg_validacao"><strong>Erro na validação</strong></span>
+                    <div class="mt-2" id="resultado"></div>
+                    <button name="btn_enviar" value="enviar" class="btn btn-enviar mt-3 mb-3">ENVIAR</button>
+                </form>
+                <div class="mb-3">
+                    <em class="text-white spam">Prometemos não utilizar suas informações de contato para enviar qualquer tipo de SPAM.</em>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+    <footer class="rodape">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-lg-4">
+                    <p>© 2021 Minha Loja | Itu/SP<br>(11) 99999-9999 </p>
+                </div>
+                <div class="col-lg-4">
+                    <a class="btn-whatsapp mr-3 ml-3" href="#" target="_blank"><i class="fab fa-whatsapp"></i> Compartilhar</a> <span class="fb-share-button" data-href="#" data-layout="button" data-size="small"><a target="_blank" href="#" class="fb-xfbml-parse-ignore">Compartilhar</a></span>
+                </div>
+                <div class="col-lg-4 mt-3">
+                    <p class="desenvolvido">Desenvolvido por: <a class="text-white" href="#" target="_blank">Felipe Castelli</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/funcoes.js"></script>
+</body>
+
+</html>
