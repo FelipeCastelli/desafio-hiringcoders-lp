@@ -1,0 +1,49 @@
+@media(min-width:990px)and (max-width:1740px){
+    .bkg-img-ckb{
+
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+@media(max-width:576px){
+
+    h1{
+        font-size: 32px;
+    }
+    h2{
+        font-size: 18px;
+    }
+    .cabecalho-formulario p{
+        font-size: 14px;
+    }
+    .spam{
+        font-size: 12px;
+    }
+    .rodape{
+        font-size: 13px;
+    }
+}
+@media(min-width:576px) and (max-width:768px){
+
+    h1{
+        font-size: 34px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    .cabecalho-formulario p{
+        font-size: 16px;
+    }
+    .spam{
+        font-size: 12px;
+    }
+
+}
+@media(min-width:768px){
+    .formulario .tratamentos p{
+        font-size: 12px;
+    }
+
+}
